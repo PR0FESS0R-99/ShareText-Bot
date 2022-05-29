@@ -10,6 +10,8 @@ Text Message Sharing Telegram Bot, Created By [Pr0fess0r-99](https://telegram.do
 
 `BOT_TOKEN` : [Click Here](https://youtu.be/cB4UduCcNWs)
 
+`BOT_PIC` : Start Pic 
+
 ## Support Me
 
 `Group` : [Join Support Group](https://telegram.me/Mo_Tech_Group/25)
