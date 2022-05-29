@@ -17,7 +17,7 @@ async def start(bot, update):
 @pr0fess0r_99.on_message(filters.private & filters.text & ~filters.command(["start"]))
 async def sharelink(bot, update):
     await bot.send_message(chat_id="me",
-        text=f"Message Sharing Link Is Ready :- https://t.me/share/url?url={quote(uodate.text)}",
+        text=f"Message Sharing Link Is Ready :- https://t.me/share/url?url={quote(update.text)}",
         disable_web_page_preview=True, reply_to_message_id=update.id
     )
 
