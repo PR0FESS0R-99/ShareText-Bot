@@ -4,7 +4,7 @@ from pyrogram.types import *
 from pyrogram import Client, filters
 
 pr0fess0r_99 = Client("ShareText-Bot",
-    api_id=environ["API_ID"], api_hash=int(environ["API_HASH"]), bot_token=environ["BOT_TOKEN"])
+    api_id=int(environ["API_ID"]), api_hash=environ["API_HASH"], bot_token=environ["BOT_TOKEN"])
 
 @pr0fess0r_99.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
