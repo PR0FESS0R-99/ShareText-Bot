@@ -21,4 +21,8 @@ async def sharelink(bot, update):
         disable_web_page_preview=True, reply_to_message_id=update.id
     )
 
+print("~~~~~~~~~~~")
+print("Bot Started")
+print("~~~~~~~~~~~")
+
 pr0fess0r_99.run()
