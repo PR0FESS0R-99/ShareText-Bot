@@ -1,6 +1,7 @@
-from os import environ
-from pyrogram import Client, filters
+from os import *
+from urllib.parse import *
 from pyrogram.types import *
+from pyrogram import Client, filters
 
 pr0fess0r_99 = Client("ShareText-Bot",
     api_id=environ["API_ID"], api_hash=int(environ["API_HASH"]), bot_token=environ["BOT_TOKEN"])
@@ -12,3 +13,12 @@ async def start(bot, update):
         text=f"Hey {update.from_user.mention}\n" + "Iam A Telegram Text Message Sharing Link Creating Bot" + "\n" + "Maintained By [MoTech](t.me/mo_Tech_Group)",
         reply_markup=pr0fess0r99, disable_web_page_preview=True, reply_to_message_id=update.id
     )
+
+@pr0fess0r_99.on_message(filters.private & filters.text & ~filters.command(["start"]))
+async def sharelink(bot, update):
+    await bot.send_message(chat_id="me",
+        text=f"Message Sharing Link Is Ready :- https://t.me/share/url?url={quote(uodate.text)}",
+        disable_web_page_preview=True, reply_to_message_id=update.id
+    )
+
+pr0fess0r_99.run()
