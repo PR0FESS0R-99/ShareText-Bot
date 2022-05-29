@@ -1,7 +1,7 @@
 from os import *
 from urllib.parse import *
 from pyrogram.types import *
-from pyrogram import Client, filters
+from pyrogram import *
 
 pr0fess0r_99 = Client("ShareText-Bot",
     api_id=int(environ["API_ID"]), api_hash=environ["API_HASH"], bot_token=environ["BOT_TOKEN"])
@@ -11,14 +11,13 @@ async def start(bot, update):
     pr0fess0r99 = InlineKeyboardMarkup( [[ InlineKeyboardButton("📦 Source Code 📦", url="https://github.com/PR0FESS0R-99/ShareText-Bot") ]] )
     await bot.send_photo(chat_id=update.chat.id, photo=environ.get("BOT_PIC", "https://telegra.ph/file/2b82d3a491f6b5869092c.jpg"),
         caption=f"Hey {update.from_user.mention}\n" + "Iam A Telegram Text Message Sharing Link Creating Bot" + "\n" + "Maintained By [MoTech](t.me/mo_Tech_Group)",
-        reply_markup=pr0fess0r99, disable_web_page_preview=True, reply_to_message_id=update.id
+        reply_markup=pr0fess0r99, reply_to_message_id=update.id
     )
 
 @pr0fess0r_99.on_message(filters.private & filters.text & ~filters.command(["start"]))
 async def sharelink(bot, update):
     await bot.send_photo(chat_id=update.chat.id, photo=environ.get("BOT_PIC", "https://telegra.ph/file/2b82d3a491f6b5869092c.jpg"),
-        caption=f"Message Sharing Link Is Ready :- https://t.me/share/url?url={quote(update.text)}",
-        disable_web_page_preview=True, reply_to_message_id=update.id
+        caption=f"Message Sharing Link Is Ready :- https://t.me/share/url?url={quote(update.text)}", reply_to_message_id=update.id
     )
 
 print("~~~~~~~~~~~")
